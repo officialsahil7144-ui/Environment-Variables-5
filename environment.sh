@@ -1,22 +1,14 @@
-#!/usr/bin/env bash
-set -e
-
-NAME="Linux Lab"
-COURSE="BCA"
-
-show_details() {
-    local MESSAGE="Welcome to the Linux Lab"
-    echo "$MESSAGE"
-    echo "Name: $NAME"
-    echo "Course: $COURSE"
-}
-
-show_details
-
-echo
-echo 'Single quotes display $NAME literally'
-echo "Double quotes display the value: $NAME"
-
-export LAB_STATUS="Environment Ready"
-bash -c 'echo "Child process: $LAB_STATUS"'
-
+#!/usr/bin/env bash 
+student="Anu" 
+course="Linux Systems Programming" 
+show_details() { 
+  local student="Ravi" 
+  printf 'Inside function: %s\n' "$student" 
+} 
+printf 'Outside function: %s\n' "$student" 
+show_details 
+printf 'Course: %s\n' "$course" 
+folder="Lab Files" 
+mkdir -p "$folder" 
+printf 'Quoted folder created: %s\n' "$folder" 
+printf 'Shell: %s\n' "$SHELL"
